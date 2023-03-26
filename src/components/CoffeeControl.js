@@ -65,6 +65,20 @@ class CoffeeControl extends React.Component {
       selectedCoffee: null
     });
   }
+
+  handleSellCoffee = (id) => {
+    const coffeeList = this.state.mainCoffeeList.map(coffee => {
+      if(coffee.id === id) {
+        const newPounds = coffee.beansLeft - 1;
+        return { ...coffee, beansLeft: newPounds < 0 ? 0 : newPounds};
+      }
+      return coffee;
+    });
+    this.setState({
+      mainCoffeeList: coffeeList
+    });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -93,7 +107,8 @@ class CoffeeControl extends React.Component {
       currentlyVisibleState = 
       <CoffeeList
       coffeeList={this.state.mainCoffeeList}
-      onCoffeeSelection = {this.handleChangingSelectedCoffee} />;
+      onCoffeeSelection = {this.handleChangingSelectedCoffee} 
+      onSellCoffee = { this.handleSellCoffee} />;
       <br/>
       buttonText = "Add Coffee Sack";
     }
