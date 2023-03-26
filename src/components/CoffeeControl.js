@@ -67,7 +67,7 @@ class CoffeeControl extends React.Component {
   }
 
   handleSellCoffee = (id) => {
-    const coffeeList = this.state.mainCoffeeList.map(coffee => {
+    const newCoffeeList = this.state.mainCoffeeList.map(coffee => {
       if(coffee.id === id) {
         const newPounds = coffee.beansLeft - 1;
         return { ...coffee, beansLeft: newPounds < 0 ? 0 : newPounds};
@@ -75,7 +75,7 @@ class CoffeeControl extends React.Component {
       return coffee;
     });
     this.setState({
-      mainCoffeeList: coffeeList
+      mainCoffeeList: newCoffeeList
     });
   }
 
@@ -109,7 +109,6 @@ class CoffeeControl extends React.Component {
       coffeeList={this.state.mainCoffeeList}
       onCoffeeSelection = {this.handleChangingSelectedCoffee} 
       onSellCoffee = { this.handleSellCoffee} />;
-      <br/>
       buttonText = "Add Coffee Sack";
     }
     return (
