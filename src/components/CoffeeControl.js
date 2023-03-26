@@ -94,6 +94,7 @@ class CoffeeControl extends React.Component {
       <CoffeeList
       coffeeList={this.state.mainCoffeeList}
       onCoffeeSelection = {this.handleChangingSelectedCoffee} />;
+      <br/>
       buttonText = "Add Coffee Sack";
     }
     return (
