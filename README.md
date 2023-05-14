@@ -35,7 +35,7 @@ _This is a Coffee Shop Inventory Manager. It has full CRUD capability, meaning t
 
 <!-- ### 🔍 Preview -->
 ## Diagram Tree Sketch
-![My Image](./images/DiagramTree.jpeg)
+<!-- [My Image](./images/DiagramTree.jpeg) -->
 ------------------------------
 
 ## 🏁 Getting Started
